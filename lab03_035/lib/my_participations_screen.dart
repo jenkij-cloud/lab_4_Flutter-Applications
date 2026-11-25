@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'participation_model.dart';
 
 class MyParticipationsScreen extends StatelessWidget {
@@ -78,14 +79,16 @@ class MyParticipationsScreen extends StatelessWidget {
                 style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
-                  'วันที่เข้าร่วม: ${item.participantDate}\nสถานะ: ${item.status}'),
+                'วันที่เข้าร่วม: ${item.participantDate}\nสถานะ: ${item.status}',
+              ),
               isThreeLine: true,
               onTap: () {
                 // แสดงป็อปอัป SnackBar เมื่อกดที่รายการ
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                        '${item.activityName}\nรายละเอียด: ${item.description}'),
+                      '${item.activityName}\nรายละเอียด: ${item.description}',
+                    ),
                     duration: const Duration(seconds: 3),
                   ),
                 );
